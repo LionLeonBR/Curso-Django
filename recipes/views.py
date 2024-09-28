@@ -4,9 +4,14 @@ from django.http import HttpResponse
 # Create your views here.
 
 def home(request):
-    return render(request, 'recipes/home.html')
+    return render(request, 'recipes/home.html', context={
+        'name': 'Leo',
+    })
+# não é preciso informar que ele está na pasta de templates
+# o django automaticamente reconhece isso
 
 def about_us(request):
-    return HttpResponse("About us")
+    return render(request, 'recipes/about_us.html')
+
 def contact(request):
-    return HttpResponse("Contact")
+    return render(request, 'me-apague/temp.html')
