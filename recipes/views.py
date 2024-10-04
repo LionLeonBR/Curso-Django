@@ -10,5 +10,7 @@ def home(request):
 # não é preciso informar que ele está na pasta de templates
 # o django automaticamente reconhece isso
 
-def about_us(request):
-    return render(request, 'recipes/about_us.html')
+def game(request, id):
+    return render(request, 'recipes/pages/game-view.html', context={
+        'name': 'Leo',
+    })
